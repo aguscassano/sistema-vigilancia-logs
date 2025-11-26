@@ -2,7 +2,7 @@ import time
 import os
 from datetime import datetime
 
-ARCHIVO_LOG = os.path.join(os.getcwd(), "registro.log")
+ARCHIVO_LOG = "/var/log/vigilante.log"
 
 print(f"--- Iniciando servicio de vigilancia ---")
 print(f"Escribiendo logs en: {ARCHIVO_LOG}")
