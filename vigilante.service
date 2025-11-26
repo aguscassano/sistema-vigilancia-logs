@@ -1,0 +1,14 @@
+[Unit]
+Description=Servicio de Vigilancia de Logs (Mi primer Daemon)
+After=network.target
+
+[Service]
+Type=simple
+User=aguscassano
+WorkingDirectory=/home/aguscassano/Proyectos/vigilante-logs
+ExecStart=/usr/bin/python3 vigilante.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
