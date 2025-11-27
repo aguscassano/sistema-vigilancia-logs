@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  vigilante:
+    build: .
+    container_name: mi-contenedor-vigilante
+    volumes:
+      - ./logs:/var/log
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
