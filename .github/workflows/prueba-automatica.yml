@@ -1,0 +1,19 @@
+name: CI - Prueba de Construcción Docker
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v3
+
+    - name: Construir imagen Docker
+      run: docker build . --file Dockerfile --tag mi-vigilante:test
+
+    - name: Verificar configuración Docker Compose
+      run: docker compose config
